@@ -365,6 +365,65 @@
 // export default app;
 
 
+// import express from 'express';
+// import cors from 'cors';
+// import 'dotenv/config';
+
+// import connectDB from './config/mongodb.js';
+// import connectCloudinary from './config/cloudinary.js';
+// import userRouter from './routes/userRoute.js';
+// import productRouter from './routes/productRoute.js';
+// import cartRouter from './routes/cartRoute.js';
+// import orderRouter from './routes/orderRoute.js';
+
+// const app = express();
+
+// // Connect to Database & Cloudinary
+// connectDB();
+// connectCloudinary();
+
+// // ================= MIDDLEWARES =================
+
+// // Allowed Origins
+// const allowedOrigins = [
+//   "https://zamansgadget.netlify.app",
+//   "https://adminzamansgadget.netlify.app"
+// ];
+
+// app.use(express.json());
+
+// app.use(
+//   cors({
+//     origin: function (origin, callback) {
+//       if (!origin) return callback(null, true); // allow mobile apps / postman
+//       if (allowedOrigins.includes(origin)) {
+//         callback(null, true);
+//       } else {
+//         callback(new Error("Not allowed by CORS"));
+//       }
+//     },
+//     credentials: true,
+//   })
+// );
+
+// // ================= API ROUTES =================
+
+// app.get("/", (req, res) => {
+//   res.send("API Working 🚀");
+// });
+
+// app.use('/api/user', userRouter);
+// app.use('/api/product', productRouter);
+// app.use('/api/cart', cartRouter);
+// app.use('/api/order', orderRouter);
+
+// // ================= EXPORT FOR VERCEL =================
+
+// export default app;
+
+
+
+
 import express from 'express';
 import cors from 'cors';
 import 'dotenv/config';
@@ -387,7 +446,9 @@ connectCloudinary();
 // Allowed Origins
 const allowedOrigins = [
   "https://zamansgadget.netlify.app",
-  "https://adminzamansgadget.netlify.app"
+  "https://adminzamansgadget.netlify.app",
+  "https://zamansgadget.com",
+  "https://www.zamansgadget.com"
 ];
 
 app.use(express.json());
